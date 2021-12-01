@@ -259,7 +259,7 @@ expr:
 	| expr IS NOT? expr
 	| expr NOT? BETWEEN expr AND expr
 	| expr NOT? IN (
-		('(' (select_stmt | expr ( ',' expr)*)? ')')
+		('(' (select_stmt | expr) ')')
 		| (( schema_name '.')? table_name)
 		| (
 			(schema_name '.')? table_function_name '(' (
@@ -548,7 +548,7 @@ module_argument: // TODO check what exactly is permitted here
 	expr
 	| column_def;
 
-column_alias: IDENTIFIER | STRING_LITERAL;
+column_alias: IDENTIFIER;
 
 keyword:
 	ABORT
@@ -759,5 +759,4 @@ table_function_name: any_name;
 
 any_name:
 	IDENTIFIER
-	| STRING_LITERAL
 	| '(' any_name ')';
