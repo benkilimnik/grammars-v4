@@ -115,7 +115,7 @@ create_table_stmt:
 		| (AS select_stmt)
 	);
 
-column_def: column_name type_name? column_constraint*;
+column_def: OWNER? column_name type_name? column_constraint*;
 
 type_name:
 	name(
