@@ -124,7 +124,8 @@ type_name:
 	)?;
 
 column_constraint: (CONSTRAINT name)? (
-		(PRIMARY KEY asc_desc? conflict_clause? AUTOINCREMENT?)
+		(PRIMARY KEY asc_desc? conflict_clause?)
+		| AUTOINCREMENT
 		| ((NOT NULL_) | UNIQUE) conflict_clause?
 		| CHECK '(' expr ')'
 		| DEFAULT (
