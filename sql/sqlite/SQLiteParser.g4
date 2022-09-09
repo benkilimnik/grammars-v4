@@ -97,8 +97,8 @@ savepoint_stmt: SAVEPOINT savepoint_name;
 release_stmt: RELEASE SAVEPOINT? savepoint_name;
 
 create_index_stmt:
-	CREATE UNIQUE? INDEX (IF NOT EXISTS)? (schema_name '.')? index_name ON table_name '('
-		indexed_column (',' indexed_column)* ')' (WHERE expr)?;
+	CREATE UNIQUE? INMEMORY? INDEX (IF NOT EXISTS)? (schema_name '.')? index_name
+	  ON table_name '(' indexed_column (',' indexed_column)* ')' (WHERE expr)?;
 
 indexed_column:
 	(column_name | expr) (COLLATE collation_name)? asc_desc?;
