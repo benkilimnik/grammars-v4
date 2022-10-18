@@ -104,7 +104,7 @@ indexed_column:
 	(column_name | expr) (COLLATE collation_name)? asc_desc?;
 
 create_table_stmt:
-	CREATE (TEMP | TEMPORARY)? (DATA SUBJECT)? TABLE (IF NOT EXISTS)? (
+	CREATE (TEMP | TEMPORARY)? (DATA_SUBJECT)? TABLE (IF NOT EXISTS)? (
 		schema_name '.'
 	)? table_name (
 		(
