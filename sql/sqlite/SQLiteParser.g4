@@ -110,7 +110,11 @@ create_table_stmt:
 		(
 			'(' column_def (',' column_def)* (
 				',' table_constraint
-			)* ')' (WITHOUT rowID = IDENTIFIER)?
+			)*
+			(
+				',' anonymize_constraint
+			)*
+			 ')' (WITHOUT rowID = IDENTIFIER)?
 		)
 		| (AS select_stmt)
 	);
