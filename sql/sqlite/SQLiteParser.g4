@@ -152,6 +152,10 @@ table_constraint: (CONSTRAINT name)? (
 		)
 	);
 
+anonymize_constraint: (CONSTRAINT name)? (
+	ON (GET | DEL) column_name ANON '(' column_name ( ',' column_name)* ')'
+);
+
 foreign_key_clause:
 	REFERENCES foreign_table (
 		'(' column_name ( ',' column_name)* ')'
