@@ -161,7 +161,7 @@ anonymize_constraint: (CONSTRAINT name)? (
 );
 
 foreign_key_clause:
-	REFERENCES foreign_table (
+	(REFERENCES | OWNED_BY | OWNS | ACCESSED_BY | ACCESSES) foreign_table (
 		'(' column_name ( ',' column_name)* ')'
 	)? (
 		(

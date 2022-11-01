@@ -50,6 +50,8 @@ NOT_EQ2: '<>';
 
 // http://www.sqlite.org/lang_keywords.html
 ABORT: A B O R T;
+ACCESSED_BY: A C C E S S E D '_' B Y;
+ACCESSES: A C C E S S E S;
 ACTION: A C T I O N;
 ADD: A D D;
 AFTER: A F T E R;
@@ -141,6 +143,8 @@ ON: O N;
 OR: O R;
 ORDER: O R D E R;
 OUTER: O U T E R;
+OWNED_BY: O W N E D '_' B Y;
+OWNS: O W N S;
 PLAN: P L A N;
 PRAGMA: P R A G M A;
 PRIMARY: P R I M A R Y;
