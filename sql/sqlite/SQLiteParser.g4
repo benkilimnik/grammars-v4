@@ -156,8 +156,15 @@ table_constraint: (CONSTRAINT name)? (
 		)
 	);
 
+anonymize_behavior: 
+	(
+		ANON '(' column_name ( ',' column_name)* ')' 
+		| DELETE_ROW
+	)
+;
+
 anonymize_constraint: (CONSTRAINT name)? (
-	ON (GET | DEL) column_name ANON '(' column_name ( ',' column_name)* ')'
+	ON (GET | DEL) column_name anonymize_behavior
 );
 
 foreign_key_clause:
